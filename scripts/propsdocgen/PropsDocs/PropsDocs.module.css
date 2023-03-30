@@ -1,0 +1,17 @@
+.table {
+  margin: 16px 0;
+  line-height: 2;
+  border-collapse: collapse;
+}
+
+.table tr :is(th, td) {
+  border: 1px solid rgb(0 0 0 / 10%);
+  padding: 6px 12px;
+}
+
+code {
+  color: #e685b5;
+  border: 1px solid #eee;
+  background-color: #fbfbfb;
+  padding: 3px 5px;
+}

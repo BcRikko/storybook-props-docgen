@@ -1,0 +1,32 @@
+{
+  "Variants": [
+    {
+      "name": "priority",
+      "type": "'primary' | 'secndary'",
+      "optional": true,
+      "default": "'primary'",
+      "comments": "ボタンの優先度を決める"
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "optional": true,
+      "default": "'md'",
+      "comments": "ボタンの大きさを決める"
+    }
+  ],
+  "CustomProps": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "optional": false,
+      "comments": "ボタン内部に表示する要素"
+    },
+    {
+      "name": "onClick",
+      "type": "() => void",
+      "optional": false,
+      "comments": "ボタンをクリックしたときに実行するイベント"
+    }
+  ]
+}

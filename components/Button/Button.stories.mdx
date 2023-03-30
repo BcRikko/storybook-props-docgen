@@ -1,0 +1,27 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Button } from './'
+
+import { PropsDocs } from '../../scripts/propsdocgen/PropsDocs'
+import ButtonPropsDoc from './Button.props.json'
+
+<Meta
+  title="MDX/Button"
+  component={Button}
+/>
+
+# Button
+
+ボタンコンポーネントはフォーム送信、ダイアログを開く、操作の実行などのアクション、またはイベントをトリガーするために使用します。
+
+<Canvas>
+  <Story name="Button Story">
+    <Button
+      priority="primary"
+      onClick={(e) => alert('hi!')}
+    >Click me!</Button>
+  </Story>
+</Canvas>
+
+## Props
+
+<PropsDocs json={ButtonPropsDoc}></PropsDocs>
