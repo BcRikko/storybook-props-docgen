@@ -1,6 +1,9 @@
 # Storybook Props Document Generator
 
+Sample repository for generating a Props document for Storybook from a component's type alias (Type Alias).
+
 コンポーネントの型エイリアス（Type Alias）からStorybook用のPropsドキュメントを生成するサンプルリポジトリです。
+
 
 ![生成したProps.jsonからStorybookのドキュメントを生成している](./assets/storybook.png)
 
@@ -8,6 +11,7 @@
 
 1. コンポーネント内にPropsの型情報を追加する
     ```typescript
+    // ./components/Button/Button.tsx
     /**
      * デザインツール上の設定
      */
@@ -40,6 +44,7 @@
     ```
 2. propsdocgenの`propsdocgen.config.ts`を設定する
     ```typescript
+    // ./scripts/propsdocgen/propsdocgen.config.ts
     import type { Config } from '.'
 
     export const config: Config = {
@@ -57,8 +62,17 @@
     }
     ```
 3. `npm run build:propsdocs`を実行し、`xxx.props.json`を生成する
+    ```txt
+    .
+    |- components
+        |- Button
+            |- Button.props.json  // <- generated
+            |- Button.tsx
+            |- Button.stories.mdx
+    ```
 4. `xxx.stories.mdx`でProps用コンポーネント（`<PropsDocs>`）を使いドキュメントを書く
     ```mdx
+    // ./components/Button/Button.stories.mdx
     import { PropsDocs } from '../../scripts/propsdocgen/PropsDocs'
     import ButtonPropsDoc from './Button.props.json'
 
